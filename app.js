@@ -1,25 +1,38 @@
-let heroi = "Darius";
-let nivelHeroi = 1;
+let wins = 40;
+let loses = 40;
+let result = sumResult;
+let rank = showRank;
+main();
 
-
-if (nivelHeroi < 1000 && nivelHeroi >0) {
-    console.log("O herói " + heroi + "está no rank Ferro")
-} else if (nivelHeroi > 1000 && nivelHeroi <= 2000) {   
-     console.log("O herói " + heroi + "está no rank Bronze")
-} else  if (nivelHeroi > 2000 && nivelHeroi <= 5000) {
-    console.log("O herói " + heroi + "está no rank Prata")
-} else if  (nivelHeroi > 5000 && nivelHeroi <= 6000) {
-    console.log("O herói " + heroi + "está no rank Ouro")
-} else if  (nivelHeroi > 6000 && nivelHeroi <= 7000) {
-    console.log("O herói " + heroi + "está no rank Platina")
-} else if  (nivelHeroi > 7000 && nivelHeroi <= 8000) {
-    console.log("O herói " + heroi + "está no rank Diamante")
-} else if  (nivelHeroi > 8000 && nivelHeroi <= 9000) {
-    console.log("O herói " + heroi + "está no rank Ascendente")
-} else if  (nivelHeroi > 9000 && nivelHeroi <= 10000) {
-    console.log("O herói " + heroi + "está no rank Imortal")
-} else if  (nivelHeroi > 11000) {
-    console.log("O herói " + heroi + "está no rank Radiante")
-} else {
-    console.log("O herói "+ heroi + " está sem rank")
+function main() {
+    result = result(wins,loses);
+    rank = rank(result);
+    console.log(`O Herói tem saldo de ${result} e está no rank ${rank}`);
 }
+
+function sumResult(numA, numB) {
+    let sum = numA - numB;
+    return sum;
+}
+
+function showRank(numA) {
+    let rank = ""
+    if (numA < 10) {
+        rank = "Ferro"
+    } else if (numA >= 10 && numA <= 20 ) {
+        rank = "Bronze"
+    } else if (numA > 20 && numA <= 50 ) {
+        rank = "Prata"
+    } else if (numA > 50 && numA <= 80 ) {
+        rank = "Ouro"
+    } else if (numA > 80 && numA <= 90 ) {
+        rank = "Diamante"
+    } else if (numA > 90 && numA <= 100 ) {
+        rank = "Lendário"
+    } else if (numA > 100) {
+        rank = "Imortal"
+    }
+
+    return rank;
+}
+
